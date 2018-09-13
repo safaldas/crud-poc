@@ -1,0 +1,23 @@
+<ActionBar title="All Users " class="action-bar" color="white" backgroundColor="#0066cc">
+</ActionBar>
+<StackLayout>
+  <StackLayout marginTop="10">
+    <GridLayout columns="*,*" rows="auto,*">
+      <label text="Username" row="0" col="0" textAlignment="center" fontSize="20" fontWeight="bold" backgroundColor="white"></label>
+      <label text="Occupation" col="1" row="0" textAlignment="center" fontSize="20" fontWeight="bold" backgroundColor="white"></label>
+      <RadListView row="1" colSpan="2" [items]="users" marginTop="15" backgroundColor="#c0c9d2">
+        <ng-template tkListItemTemplate let-item="item">
+          <CardView class="cardStyle" marginTop="2" elevation="40" radius="3" width="100%" height="61%" radius="5"
+            elevation="5">
+            <GridLayout columns="*,*">
+              <Label [text]="item.name" col="0" padding="10" horizontalAlignment="center" fontSize="20"></Label>
+              <Label [text]="item.occupation" col="1" padding="10" horizontalAlignment="center" fontSize="20"></Label>
+            </GridLayout>
+
+          </CardView>
+        </ng-template>
+
+      </RadListView>
+    </GridLayout>
+  </StackLayout>
+</StackLayout>

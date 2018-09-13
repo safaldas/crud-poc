@@ -8,6 +8,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { AddUserComponent } from "~/add-user/add-user.component";
+import { UserListingComponent } from "~/user-listing/user-listing.component";
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 
 @NgModule({
     bootstrap: [
@@ -17,10 +19,11 @@ import { AddUserComponent } from "~/add-user/add-user.component";
         NativeScriptModule,
         AppRoutingModule,
         NativeScriptFormsModule,
-        NativeScriptHttpModule
+        NativeScriptHttpModule,
+        NativeScriptUIListViewModule
     ],
     declarations: [
-        AppComponent, AddUserComponent
+        AppComponent, AddUserComponent, UserListingComponent
     ],
     providers: [
     ],

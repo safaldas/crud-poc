@@ -9,21 +9,23 @@
     <TextField hint="Enter Occupation" [(ngModel)]="occupation" maxLength="10" class="input input-border"></TextField>
     <Button text="Submit" (tap)="submit()" color="white" backgroundColor="#0066cc"></Button>
 </StackLayout> -->
-<ActionBar title="DEMO" class="action-bar" backgroundColor="#0066cc">
+<ActionBar title="DEMO" class="action-bar" color="white" backgroundColor="#0066cc">
 </ActionBar>
 <StackLayout backgroundColor="#c0c9d2">
     <StackLayout marginTop="25%">
-        <CardView class="cardStyle" margin="10" elevation="40" radius="3" width="90%" height="61%" radius="5" elevation="5">
-            <GridLayout rows="auto, auto,auto,auto,auto,auto">
-                <TextField row="0" hint="Enter First Name" [(ngModel)]="first_name" width="80%" maxLength="10"
+        <CardView class="cardStyle" margin="10" elevation="40" radius="3" width="90%" height="70%" radius="5" elevation="5">
+            <GridLayout rows="auto,auto, auto,auto,auto,auto,auto">
+                <Label text="User Details" marginTop="10" textAlignment="center" fontSize="24" fontWeight="bold"></Label>
+                <TextField row="1" hint="Enter First Name" [(ngModel)]="first_name" width="80%" maxLength="10"
                     borderColor="gray" borderBottomRadius="0.5" marginTop="20" marginBottom="5"></TextField>
-                <label row="1" paddingLeft="35" color="red" text="name should be filled" fontSize="10"></label>
-                <TextField row="2" hint="Enter Occupation" [(ngModel)]="occupation" width="80%" maxLength="10"
+                <label row="2" paddingLeft="35" color="red" text="name should be filled" fontSize="10"></label>
+                <TextField row="3" hint="Enter Occupation" [(ngModel)]="occupation" width="80%" maxLength="10"
                     borderColor="gray" borderBottomRadius="0.5" marginBottom="5"></TextField>
-                <label row="3" paddingLeft="35" color="red" text="occupation should be filled" fontSize="10"></label>
+                <label row="4" paddingLeft="35" color="red" text="occupation should be filled" fontSize="10"></label>
 
-                <Button row="4" text="Submit" (tap)="submit()" marginTop="10" width="50%" color="white" backgroundColor="#0066cc"></Button>
-                <Button row="5" text="View All Users" (tap)="viewAll()" marginTop="15" color="black" backgroundColor="#c0c9d2"></Button>
+                <Button row="5" text="Submit" (tap)="submit()" width="80%" marginTop="10" color="white" backgroundColor="#0066cc"></Button>
+                <label row="6" text="View All Users" (tap)="viewAll()" textAlignment="center" fontSize="16" marginTop="15"
+                    color="black"></label>
 
             </GridLayout>
         </CardView>
