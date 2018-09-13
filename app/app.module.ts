@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { UserListingComponent } from './user-listing/user-listing.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -17,7 +18,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     NativeScriptHttpModule,
     ReactiveFormsModule
   ],
-  declarations: [AppComponent, AddUserComponent],
+  declarations: [AppComponent, AddUserComponent, UserListingComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA]
 })

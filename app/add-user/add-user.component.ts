@@ -6,6 +6,8 @@ require('nativescript-localstorage');
 
 registerElement('CardView', () => CardView);
 
+import { RouterExtensions } from "nativescript-angular/router";
+
 @Component({
   moduleId: module.id,
 
@@ -14,8 +16,7 @@ registerElement('CardView', () => CardView);
 })
 export class AddUserComponent implements OnInit {
   inputDataForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: RouterExtensions) {
     this.inputDataForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       occupation: ['', Validators.required]
@@ -37,11 +38,13 @@ export class AddUserComponent implements OnInit {
         this.validateForm('inputDataForm')
     }
   }
-  viewAll() {}
   validateForm(form:string) {
     Object.keys(this[form].controls).forEach(field => {
       const control = this[form].get(field);
       control.markAsTouched({ onlySelf: true });
     });
   }
+    viewAll() {
+        this.router.navigate(['user-listing']);
+    }
 }
