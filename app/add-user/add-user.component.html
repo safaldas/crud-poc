@@ -1,26 +1,15 @@
-<!-- <ActionBar title="DEMO" class="action-bar">
-</ActionBar>
-<StackLayout>
-    <label text="View All Users" textDecoration="underline" fontSize="20" color="red" horizontalAlignment="right"></label>
-</StackLayout>
-<StackLayout orientation="vertical" verticalAlignment="center" width="90%">
-    <TextField hint="Enter First Name" [(ngModel)]="first_name" maxLength="10" class="input input-border"></TextField>
-
-    <TextField hint="Enter Occupation" [(ngModel)]="occupation" maxLength="10" class="input input-border"></TextField>
-    <Button text="Submit" (tap)="submit()" color="white" backgroundColor="#0066cc"></Button>
-</StackLayout> -->
 <ActionBar title="DEMO" class="action-bar" backgroundColor="#0066cc">
 </ActionBar>
 <StackLayout backgroundColor="#c0c9d2">
     <StackLayout marginTop="25%">
         <CardView class="cardStyle" margin="10" elevation="40" radius="3" width="90%" height="61%" radius="5" elevation="5">
-            <GridLayout rows="auto, auto,auto,auto,auto,auto">
-                <TextField row="0" hint="Enter First Name" [(ngModel)]="first_name" width="80%" maxLength="10"
+            <GridLayout rows="auto, auto,auto,auto,auto,auto" [formGroup]="inputDataForm">
+                <TextField row="0" hint="Enter First Name" formControlName="first_name" width="80%" maxLength="10"
                     borderColor="gray" borderBottomRadius="0.5" marginTop="20" marginBottom="5"></TextField>
-                <label row="1" paddingLeft="35" color="red" text="name should be filled" fontSize="10"></label>
-                <TextField row="2" hint="Enter Occupation" [(ngModel)]="occupation" width="80%" maxLength="10"
+                <label *ngIf="inputDataForm.get('first_name').errors?.required && inputDataForm.get('first_name').touched" row="1" paddingLeft="35" color="red" text="name should be filled" fontSize="10"></label>
+                <TextField row="2" hint="Enter Occupation" formControlName="occupation" width="80%" maxLength="10"
                     borderColor="gray" borderBottomRadius="0.5" marginBottom="5"></TextField>
-                <label row="3" paddingLeft="35" color="red" text="occupation should be filled" fontSize="10"></label>
+                <label *ngIf="inputDataForm.get('occupation').errors?.required && inputDataForm.get('occupation').touched" row="3" paddingLeft="35" color="red" text="occupation should be filled" fontSize="10"></label>
 
                 <Button row="4" text="Submit" (tap)="submit()" marginTop="10" width="50%" color="white" backgroundColor="#0066cc"></Button>
                 <Button row="5" text="View All Users" (tap)="viewAll()" marginTop="15" color="black" backgroundColor="#c0c9d2"></Button>
