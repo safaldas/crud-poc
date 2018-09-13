@@ -3,6 +3,7 @@ import { NativeScriptModule } from 'nativescript-angular/nativescript.module';
 import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 import { NativeScriptHttpModule } from 'nativescript-angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NativeScriptUIListViewModule } from 'nativescript-ui-listview/angular';
 
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { UserListingComponent } from './user-listing/user-listing.component';
     AppRoutingModule,
     NativeScriptFormsModule,
     NativeScriptHttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NativeScriptUIListViewModule
   ],
   declarations: [AppComponent, AddUserComponent, UserListingComponent],
   providers: [],
